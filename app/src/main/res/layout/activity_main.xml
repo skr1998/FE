@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#041c24"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#3264a8"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/cardview_light_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/gagalin"
+                android:text="Crypto-thon"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/scoreboard" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/form"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/hintUI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/timer"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toEndOf="@id/teamname"-->
+<!--            android:hint="Timer"-->
+<!--            android:layout_marginLeft="50px"-->
+<!--            >-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/teamname"
+            android:text="00:00:00"
+            android:fontFamily="@font/font1"
+            android:gravity="right"
+
+            />
+
+
+        <TextView
+                    android:id="@+id/teamname"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="SE team"
+                    android:gravity="center"
+            android:fontFamily="@font/gagalin"
+            android:textColor="#ED3237"
+            android:textSize="25dp"
+
+            />
+
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/teamname"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            >-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+
+<!--                android:id="@+id/teamnameText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:enabled="false"-->
+<!--                android:focusable="false"-->
+<!--                android:textColor="#FFFFFF" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <TextView
+            android:id="@+id/ranking"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="2/50"
+            android:gravity="center"
+            android:layout_below="@id/teamname"
+            android:fontFamily="@font/gagalin"
+            android:textColor="#F9E830"
+            android:textSize="25dp"
+
+            />
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/ranking"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/teamname"-->
+<!--            android:hint="Ranking"-->
+<!--            app:hintTextColor="#FFFFFF"-->
+<!--            >-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/rankingText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:enabled="false"-->
+<!--                android:focusable="false"-->
+<!--                android:textColor="#FFFFFF" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ranking"
+            android:layout_marginTop="50px"
+            android:layout_marginBottom="50px"
+            android:fontFamily="@font/font1"
+            android:hint="Question">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:textColor="#000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question"
+            android:hint="Answer"
+            app:counterEnabled="true"
+            app:counterMaxLength="50"
+            app:endIconMode="clear_text"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/answerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="#000"
+                android:fontFamily="@font/font1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/outlinedButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/answer"
+            android:text="Submit"
+            android:fontFamily="@font/font1"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#7aeb34"
+            app:rippleColor="#000000" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/hintUI"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="15px"
+        android:background="#99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Need Help?"
+            app:backgroundTint="#4287f5" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hint"
+            android:fontFamily="@font/font1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_margin="50px"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hintText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:focusable="false"
+                android:fontFamily="@font/font1"
+                android:textColor="#FFFFFF"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
